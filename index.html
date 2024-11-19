@@ -8,7 +8,6 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
-	
 	<style>
         html, body {
             height: 100%;
@@ -19,8 +18,8 @@
             height: 100%;
         }
 	</style>
-          
-        <title>Rio 60° - Ambiental Media</title>
+
+        <title></title>
     </head>
     <body>
         <div id="map">
@@ -34,7 +33,6 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/Limite_de_Bairros_2.js"></script>
         <script src="data/Ptos_Apoio_inundacao_3.js"></script>
         <script src="data/Ptos_Apoio_deslizamento_4.js"></script>
         <script src="data/sirenes_31983_5.js"></script>
@@ -48,126 +46,36 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0');
-        map.getPane('pane_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0').style.zIndex = 400;
-        var img_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0 = 'data/populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0.png';
-        var img_bounds_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0 = [[-23.08948870388545,-43.79919699034788],[-22.73925574305946,-43.09407475873629]];
-        var layer_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0 = new L.imageOverlay(img_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0,
-                                              img_bounds_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0,
-                                              {pane: 'pane_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0'});
-        bounds_group.addLayer(layer_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0);
-        map.addLayer(layer_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0);
-        map.createPane('pane_movimentomassa_scaled_8bit_1');
-        map.getPane('pane_movimentomassa_scaled_8bit_1').style.zIndex = 401;
-        var img_movimentomassa_scaled_8bit_1 = 'data/movimentomassa_scaled_8bit_1.png';
-        var img_bounds_movimentomassa_scaled_8bit_1 = [[-23.087602064680183,-43.79668848717378],[-22.74591191373804,-43.093009853867336]];
-        var layer_movimentomassa_scaled_8bit_1 = new L.imageOverlay(img_movimentomassa_scaled_8bit_1,
-                                              img_bounds_movimentomassa_scaled_8bit_1,
-                                              {pane: 'pane_movimentomassa_scaled_8bit_1'});
-        bounds_group.addLayer(layer_movimentomassa_scaled_8bit_1);
-        map.addLayer(layer_movimentomassa_scaled_8bit_1);
-        function pop_Limite_de_Bairros_2(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['objectid'] !== null ? autolinker.link(feature.properties['objectid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['área'] !== null ? autolinker.link(feature.properties['área'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['nome'] !== null ? autolinker.link(feature.properties['nome'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['regiao_adm'] !== null ? autolinker.link(feature.properties['regiao_adm'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['area_plane'] !== null ? autolinker.link(feature.properties['area_plane'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['codbairro'] !== null ? autolinker.link(feature.properties['codbairro'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['codra'] !== null ? autolinker.link(feature.properties['codra'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['codbnum'] !== null ? autolinker.link(feature.properties['codbnum'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link'] !== null ? autolinker.link(feature.properties['link'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['rp'] !== null ? autolinker.link(feature.properties['rp'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cod_rp'] !== null ? autolinker.link(feature.properties['cod_rp'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['codbairro_'] !== null ? autolinker.link(feature.properties['codbairro_'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['st_areasha'] !== null ? autolinker.link(feature.properties['st_areasha'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['st_perimet'] !== null ? autolinker.link(feature.properties['st_perimet'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['indicadorea_escorreamento_2010_2013'] !== null ? autolinker.link(feature.properties['indicadorea_escorreamento_2010_2013'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['indicador_escorregamento_2015'] !== null ? autolinker.link(feature.properties['indicador_escorregamento_2015'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['indicadores_escorregamento_2010_2015'] !== null ? autolinker.link(feature.properties['indicadores_escorregamento_2010_2015'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['indicador_datario_2024'] !== null ? autolinker.link(feature.properties['indicador_datario_2024'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['indicadores_esgotamento_outros'] !== null ? autolinker.link(feature.properties['indicadores_esgotamento_outros'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['indicador_esgotamento_sem'] !== null ? autolinker.link(feature.properties['indicador_esgotamento_sem'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['indicador_vulnerab_rio_inundavel'] !== null ? autolinker.link(feature.properties['indicador_vulnerab_rio_inundavel'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['indicador_sucet_inundacoes'] !== null ? autolinker.link(feature.properties['indicador_sucet_inundacoes'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Limite_de_Bairros_2_0() {
-            return {
-                pane: 'pane_Limite_de_Bairros_2',
-                opacity: 1,
-                color: 'rgba(255,251,1,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 2.0, 
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Limite_de_Bairros_2');
-        map.getPane('pane_Limite_de_Bairros_2').style.zIndex = 402;
-        map.getPane('pane_Limite_de_Bairros_2').style['mix-blend-mode'] = 'normal';
-        var layer_Limite_de_Bairros_2 = new L.geoJson(json_Limite_de_Bairros_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Limite_de_Bairros_2',
-            layerName: 'layer_Limite_de_Bairros_2',
-            pane: 'pane_Limite_de_Bairros_2',
-            onEachFeature: pop_Limite_de_Bairros_2,
-            style: style_Limite_de_Bairros_2_0,
+        map.createPane('pane_GoogleSatellite_0');
+        map.getPane('pane_GoogleSatellite_0').style.zIndex = 400;
+        var layer_GoogleSatellite_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatellite_0',
+            opacity: 1.0,
+            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
         });
-        bounds_group.addLayer(layer_Limite_de_Bairros_2);
-        map.addLayer(layer_Limite_de_Bairros_2);
+        layer_GoogleSatellite_0;
+        map.createPane('pane_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1');
+        map.getPane('pane_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1').style.zIndex = 401;
+        var img_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1 = 'data/populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1.png';
+        var img_bounds_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1 = [[-23.08948870388545,-43.79919699034788],[-22.73925574305946,-43.09407475873629]];
+        var layer_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1 = new L.imageOverlay(img_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1,
+                                              img_bounds_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1,
+                                              {pane: 'pane_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1'});
+        bounds_group.addLayer(layer_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1);
+        map.addLayer(layer_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1);
+        map.createPane('pane_movimentomassa_scaled_8bit_2');
+        map.getPane('pane_movimentomassa_scaled_8bit_2').style.zIndex = 402;
+        var img_movimentomassa_scaled_8bit_2 = 'data/movimentomassa_scaled_8bit_2.png';
+        var img_bounds_movimentomassa_scaled_8bit_2 = [[-23.087602064680183,-43.79668848717378],[-22.74591191373804,-43.093009853867336]];
+        var layer_movimentomassa_scaled_8bit_2 = new L.imageOverlay(img_movimentomassa_scaled_8bit_2,
+                                              img_bounds_movimentomassa_scaled_8bit_2,
+                                              {pane: 'pane_movimentomassa_scaled_8bit_2'});
+        bounds_group.addLayer(layer_movimentomassa_scaled_8bit_2);
+        map.addLayer(layer_movimentomassa_scaled_8bit_2);
         function pop_Ptos_Apoio_inundacao_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -451,35 +359,12 @@
         bounds_group.addLayer(layer_sirenes_31983_5);
         map.addLayer(layer_sirenes_31983_5);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/sirenes_31983_5.png" /> sirenes_31983': layer_sirenes_31983_5,'<img src="legend/Ptos_Apoio_deslizamento_4.png" /> Ptos_Apoio_deslizamento': layer_Ptos_Apoio_deslizamento_4,'<img src="legend/Ptos_Apoio_inundacao_3.png" /> Ptos_Apoio_inundacao': layer_Ptos_Apoio_inundacao_3,'<img src="legend/Limite_de_Bairros_2.png" /> Limite_de_Bairros': layer_Limite_de_Bairros_2,"movimentomassa_scaled_8bit": layer_movimentomassa_scaled_8bit_1,"populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit": layer_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/sirenes_31983_5.png" /> sirenes_31983': layer_sirenes_31983_5,'<img src="legend/Ptos_Apoio_deslizamento_4.png" /> Ptos_Apoio_deslizamento': layer_Ptos_Apoio_deslizamento_4,'<img src="legend/Ptos_Apoio_inundacao_3.png" /> Ptos_Apoio_inundacao': layer_Ptos_Apoio_inundacao_3,"movimentomassa_scaled_8bit": layer_movimentomassa_scaled_8bit_2,"populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit": layer_populacao_poptotal_domimputados_domcoletivos_rend_analfab_8bit_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
         setBounds();
-        var i = 0;
-        layer_Limite_de_Bairros_2.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['nome'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['nome']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Limite_de_Bairros_2'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
         L.ImageOverlay.include({
             getBounds: function () {
                 return this._bounds;
             }
-        });
-        resetLabels([layer_Limite_de_Bairros_2]);
-        map.on("zoomend", function(){
-            resetLabels([layer_Limite_de_Bairros_2]);
-        });
-        map.on("layeradd", function(){
-            resetLabels([layer_Limite_de_Bairros_2]);
-        });
-        map.on("layerremove", function(){
-            resetLabels([layer_Limite_de_Bairros_2]);
         });
         </script>
     </body>
